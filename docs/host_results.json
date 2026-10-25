@@ -1,0 +1,110 @@
+[
+  {
+    "TEST": "startup",
+    "RESULT": "PASS",
+    "OBSERVATION": "state=CHOOSE_START, angle=0",
+    "exit_code": 0
+  },
+  {
+    "TEST": "valid",
+    "RESULT": "PASS",
+    "OBSERVATION": "angle=90, state=UNLOCKED",
+    "exit_code": 0
+  },
+  {
+    "TEST": "servo_cycle",
+    "RESULT": "PASS",
+    "OBSERVATION": "hold_start=2942, observed_close_phase=7957, end_angle=0",
+    "exit_code": 0
+  },
+  {
+    "TEST": "wrong_counts",
+    "RESULT": "PASS",
+    "OBSERVATION": "first=1, second=2",
+    "exit_code": 0
+  },
+  {
+    "TEST": "three_wrong",
+    "RESULT": "PASS",
+    "OBSERVATION": "state=BLOCKED, attempts=3",
+    "exit_code": 0
+  },
+  {
+    "TEST": "block_duration",
+    "RESULT": "FAIL",
+    "OBSERVATION": "lockout_duration_ms=10000; requirement=30000",
+    "exit_code": 1
+  },
+  {
+    "TEST": "blocked_input",
+    "RESULT": "PASS",
+    "OBSERVATION": "state=BLOCKED, stored=1",
+    "exit_code": 0
+  },
+  {
+    "TEST": "post_block",
+    "RESULT": "PASS",
+    "OBSERVATION": "attempts_after_timeout_and_one_wrong=1",
+    "exit_code": 0
+  },
+  {
+    "TEST": "short",
+    "RESULT": "PASS",
+    "OBSERVATION": "length=1, attempts=0",
+    "exit_code": 0
+  },
+  {
+    "TEST": "length_limit",
+    "RESULT": "PASS",
+    "OBSERVATION": "pathLength=4",
+    "exit_code": 0
+  },
+  {
+    "TEST": "bounds",
+    "RESULT": "PASS",
+    "OBSERVATION": "4 direction boundaries rejected; pathLength=1",
+    "exit_code": 0
+  },
+  {
+    "TEST": "joy_hold",
+    "RESULT": "PASS",
+    "OBSERVATION": "one held deflection: pathLength=2",
+    "exit_code": 0
+  },
+  {
+    "TEST": "joy_rearm",
+    "RESULT": "PASS",
+    "OBSERVATION": "two deflections with release: pathLength=3",
+    "exit_code": 0
+  },
+  {
+    "TEST": "button",
+    "RESULT": "PASS",
+    "OBSERVATION": "held SEL once: state=UNLOCKED",
+    "exit_code": 0
+  },
+  {
+    "TEST": "first_record",
+    "RESULT": "PASS",
+    "OBSERVATION": "first new pattern stored=1",
+    "exit_code": 0
+  },
+  {
+    "TEST": "unauth_reset",
+    "RESULT": "FAIL",
+    "OBSERVATION": "unauthenticated_r_erases=1, attacker_new_key_angle=90",
+    "exit_code": 1
+  },
+  {
+    "TEST": "counter_single",
+    "RESULT": "PASS",
+    "OBSERVATION": "after 5 seconds idle: attempts=1",
+    "exit_code": 0
+  },
+  {
+    "TEST": "eeprom_restart",
+    "RESULT": "PASS",
+    "OBSERVATION": "EEPROM retained on setup restart; recordMode=0",
+    "exit_code": 0
+  }
+]

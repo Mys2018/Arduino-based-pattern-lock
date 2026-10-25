@@ -1,0 +1,242 @@
+{
+  "version": 1,
+  "author": "Контрольный стенд аналитика по присланному скетчу",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "id": "mega",
+      "type": "wokwi-arduino-mega",
+      "top": 80,
+      "left": 0
+    },
+    {
+      "id": "matrix",
+      "type": "wokwi-max7219-matrix",
+      "top": -150,
+      "left": 60,
+      "attrs": {
+        "chain": "1",
+        "layout": "parola"
+      }
+    },
+    {
+      "id": "lcd",
+      "type": "wokwi-lcd1602",
+      "top": -150,
+      "left": 310,
+      "attrs": {
+        "pins": "i2c"
+      }
+    },
+    {
+      "id": "joy",
+      "type": "wokwi-analog-joystick",
+      "top": 90,
+      "left": -200
+    },
+    {
+      "id": "servo",
+      "type": "wokwi-servo",
+      "top": 100,
+      "left": 450
+    },
+    {
+      "id": "buzz",
+      "type": "wokwi-buzzer",
+      "top": 280,
+      "left": 450
+    },
+    {
+      "id": "red",
+      "type": "wokwi-led",
+      "top": 380,
+      "left": 400,
+      "attrs": {
+        "color": "red"
+      }
+    },
+    {
+      "id": "green",
+      "type": "wokwi-led",
+      "top": 380,
+      "left": 500,
+      "attrs": {
+        "color": "green"
+      }
+    },
+    {
+      "id": "r1",
+      "type": "wokwi-resistor",
+      "top": 440,
+      "left": 390,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "id": "r2",
+      "type": "wokwi-resistor",
+      "top": 470,
+      "left": 490,
+      "attrs": {
+        "value": "220"
+      }
+    }
+  ],
+  "connections": [
+    [
+      "matrix:VCC",
+      "mega:5V",
+      "red",
+      []
+    ],
+    [
+      "matrix:GND",
+      "mega:GND.1",
+      "black",
+      []
+    ],
+    [
+      "matrix:DIN",
+      "mega:51",
+      "green",
+      []
+    ],
+    [
+      "matrix:CLK",
+      "mega:52",
+      "blue",
+      []
+    ],
+    [
+      "matrix:CS",
+      "mega:53",
+      "orange",
+      []
+    ],
+    [
+      "lcd:VCC",
+      "mega:5V",
+      "red",
+      []
+    ],
+    [
+      "lcd:GND",
+      "mega:GND.1",
+      "black",
+      []
+    ],
+    [
+      "lcd:SDA",
+      "mega:20",
+      "green",
+      []
+    ],
+    [
+      "lcd:SCL",
+      "mega:21",
+      "blue",
+      []
+    ],
+    [
+      "joy:VCC",
+      "mega:5V",
+      "red",
+      []
+    ],
+    [
+      "joy:GND",
+      "mega:GND.1",
+      "black",
+      []
+    ],
+    [
+      "joy:VRX",
+      "mega:A0",
+      "green",
+      []
+    ],
+    [
+      "joy:VRY",
+      "mega:A1",
+      "blue",
+      []
+    ],
+    [
+      "joy:SEL",
+      "mega:12",
+      "orange",
+      []
+    ],
+    [
+      "servo:V+",
+      "mega:5V",
+      "red",
+      []
+    ],
+    [
+      "servo:GND",
+      "mega:GND.1",
+      "black",
+      []
+    ],
+    [
+      "servo:PWM",
+      "mega:9",
+      "orange",
+      []
+    ],
+    [
+      "buzz:1",
+      "mega:8",
+      "purple",
+      []
+    ],
+    [
+      "buzz:2",
+      "mega:GND.1",
+      "black",
+      []
+    ],
+    [
+      "red:A",
+      "r1:1",
+      "red",
+      []
+    ],
+    [
+      "r1:2",
+      "mega:6",
+      "red",
+      []
+    ],
+    [
+      "red:C",
+      "mega:GND.1",
+      "black",
+      []
+    ],
+    [
+      "green:A",
+      "r2:1",
+      "green",
+      []
+    ],
+    [
+      "r2:2",
+      "mega:7",
+      "green",
+      []
+    ],
+    [
+      "green:C",
+      "mega:GND.1",
+      "black",
+      []
+    ]
+  ],
+  "serialMonitor": {
+    "display": "always",
+    "newline": "lf"
+  }
+}

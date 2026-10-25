@@ -1,0 +1,12 @@
+[
+  {
+    "case": "cycle",
+    "exit_code": 0,
+    "output": "TEST=cycle\nRESULT=PASS\nOBSERVATION=currentAngle=0, lockState=0\n--- SERIAL ---\n[LOCK] Готов. Команды: 'o' - открыть, 'c' - закрыть\n[LOCK] Открывается...\n[LOCK] ОТКРЫТ (90 градусов), удержание...\n[LOCK] Закрывается...\n[LOCK] ЗАКРЫТ (0 градусов)\n"
+  },
+  {
+    "case": "quick_close",
+    "exit_code": 0,
+    "output": "TEST=quick_close\nRESULT=PASS\nOBSERVATION=currentAngle=0, lockState=0\n--- SERIAL ---\n[LOCK] Готов. Команды: 'o' - открыть, 'c' - закрыть\n[LOCK] Открывается...\n[LOCK] Закрывается...\n[LOCK] ЗАКРЫТ (0 градусов)\n"
+  }
+]

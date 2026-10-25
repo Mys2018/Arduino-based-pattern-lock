@@ -1,0 +1,81 @@
+[FSM] Start
+[FSM] START -> START
+  All LEDs blinking
+[FSM] START -> CHOOSE_START
+  No password set! Choose the start of the new pattern (w/a/s/d, e)
+[FSM] CHOOSE_START -> INPUT_PATH
+  Recording: draw a path of 4 LEDs with the joystick, then press its button
+  LED 1 (path length 2)
+  LED 9 (path length 3)
+  LED 10 (path length 4)
+  Password saved to EEPROM
+[FSM] INPUT_PATH -> CHOOSE_START
+  Choose start: w/a/s/d = cursor, e = confirm, r = new password
+[FSM] CHOOSE_START -> INPUT_PATH
+  Enter password: joystick or w/a/s/d = path, button or e = Enter
+  LED 1 (path length 2)
+  LED 9 (path length 3)
+  LED 10 (path length 4)
+[FSM] INPUT_PATH -> CHECK_PASS
+  Comparing with the password from EEPROM...
+[FSM] CHECK_PASS -> UNLOCKED
+  Password correct, green LED ON
+  [SERVO] Opening...
+  [SERVO] Open (90), holding 5 s
+  [SERVO] Closing...
+  [SERVO] Closed, green LED OFF
+[FSM] UNLOCKED -> CHOOSE_START
+  Choose start: w/a/s/d = cursor, e = confirm, r = new password
+[FSM] CHOOSE_START -> INPUT_PATH
+  Enter password: joystick or w/a/s/d = path, button or e = Enter
+  LED 8 (path length 2)
+  LED 9 (path length 3)
+  LED 17 (path length 4)
+[FSM] INPUT_PATH -> CHECK_PASS
+  Comparing with the password from EEPROM...
+  Wrong, attempt 1
+[FSM] CHECK_PASS -> INPUT_PATH
+  Enter password: joystick or w/a/s/d = path, button or e = Enter
+  LED 1 (path length 2)
+  LED 9 (path length 3)
+  Path is too short
+  LED 17 (path length 4)
+[FSM] INPUT_PATH -> CHECK_PASS
+  Comparing with the password from EEPROM...
+  Wrong, attempt 2
+[FSM] CHECK_PASS -> INPUT_PATH
+  Enter password: joystick or w/a/s/d = path, button or e = Enter
+  LED 8 (path length 2)
+  LED 9 (path length 3)
+  LED 17 (path length 4)
+[FSM] INPUT_PATH -> CHECK_PASS
+  Comparing with the password from EEPROM...
+  Wrong, attempt 3
+[FSM] CHECK_PASS -> BLOCKED
+  3 wrong attempts, locked by timer
+[FSM] BLOCKED -> CHOOSE_START
+  Choose start: w/a/s/d = cursor, e = confirm, r = new password
+  Password erased. Choose the start of the new pattern
+[FSM] CHOOSE_START -> INPUT_PATH
+  Recording: draw a path of 4 LEDs with the joystick, then press its button
+  LED 8 (path length 2)
+  LED 9 (path length 3)
+  LED 17 (path length 4)
+  Password saved to EEPROM
+[FSM] INPUT_PATH -> CHOOSE_START
+  Choose start: w/a/s/d = cursor, e = confirm, r = new password
+[FSM] CHOOSE_START -> INPUT_PATH
+  Enter password: joystick or w/a/s/d = path, button or e = Enter
+  LED 8 (path length 2)
+  LED 9 (path length 3)
+  LED 17 (path length 4)
+[FSM] INPUT_PATH -> CHECK_PASS
+  Comparing with the password from EEPROM...
+[FSM] CHECK_PASS -> UNLOCKED
+  Password correct, green LED ON
+  [SERVO] Opening...
+  [SERVO] Open (90), holding 5 s
+  [SERVO] Closing...
+  [SERVO] Closed, green LED OFF
+[FSM] UNLOCKED -> CHOOSE_START
+  Choose start: w/a/s/d = cursor, e = confirm, r = new password
