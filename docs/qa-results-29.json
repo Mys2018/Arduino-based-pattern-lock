@@ -1,0 +1,56 @@
+[
+  {
+    "test": "neutral",
+    "exit_code": 0,
+    "result": "RESULT=PASS",
+    "observation": "OBSERVATION=neutral 5s: pathLength=1"
+  },
+  {
+    "test": "four_directions",
+    "exit_code": 0,
+    "result": "RESULT=PASS",
+    "observation": "OBSERVATION=up/down/left/right from cell 9: expected 1/17/8/10"
+  },
+  {
+    "test": "all_path_boundaries",
+    "exit_code": 0,
+    "result": "RESULT=PASS",
+    "observation": "OBSERVATION=all 4 INPUT_PATH boundary attempts ignored, length/counter unchanged"
+  },
+  {
+    "test": "choose_joystick",
+    "exit_code": 1,
+    "result": "RESULT=FAIL",
+    "observation": "OBSERVATION=joystick-only start: currentLED=0, state=CHOOSE_START"
+  },
+  {
+    "test": "button_bounce",
+    "exit_code": 0,
+    "result": "RESULT=PASS",
+    "observation": "OBSERVATION=no event during bouncing; 1 event for held press; 2 events after second press"
+  },
+  {
+    "test": "success_resets_errors",
+    "exit_code": 0,
+    "result": "RESULT=PASS",
+    "observation": "OBSERVATION=two errors, success, close, wrong: attempts=1"
+  },
+  {
+    "test": "repeat_cycle",
+    "exit_code": 0,
+    "result": "RESULT=PASS",
+    "observation": "OBSERVATION=P-close-Q-P-close completed"
+  },
+  {
+    "test": "block_duration",
+    "exit_code": 1,
+    "result": "RESULT=FAIL",
+    "observation": "OBSERVATION=lockout_duration_ms=10000; requirement=30000"
+  },
+  {
+    "test": "unauth_reset",
+    "exit_code": 1,
+    "result": "RESULT=FAIL",
+    "observation": "OBSERVATION=unauthenticated_r_erases=1, attacker_new_key_angle=90"
+  }
+]
